@@ -32,7 +32,7 @@ const tail = (elements = []) => {
     try {
         if (!isValidArray(elements)) throw new Error("Invalid parameter, expected an array");
         [ firstElement, ...otherElements] = elements;
-        return otherElements?.length > 0? otherElements : [];
+        return otherElements?.length ? otherElements : [];
     } catch (e) {
         console.log(e);
     }
@@ -48,8 +48,8 @@ console.log(tail(products));
 const init = (elements = []) => {
     try {
         if (!isValidArray(elements)) throw new Error("Invalid parameter, expected an array");
-        let copy = elements.length > 0? [...elements] : [];
-        if (copy.length > 0) copy.pop();
+        let copy = elements.length ? [...elements] : [];
+        if (copy.length) copy.pop();
         return copy;
     } catch (e) {
         console.log(e);
@@ -63,7 +63,7 @@ console.log(init(products));
 const last = (elements = []) => {
     try {
         if (!isValidArray(elements)) throw new Error("Invalid parameter, expected an array");
-        return elements.length > 0? [...elements].pop() : [];
+        return elements.length ? [...elements].pop() : [];
     } catch (e) {
         console.log(e);
     }
